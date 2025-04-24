@@ -45,49 +45,58 @@ const drugs = [
    ];
 
    //1. Get all drugs that are antibiotics.
-//const antibiotics = drugs.filter(drug => drug.category === "Antibiotic");
-//console.log("Antibiotics:", antibiotics);
+const antibiotics = drugs.filter(drug => drug.category === "Antibiotic");
+console.log("Antibiotics:", antibiotics);
+
 
 //2. Return an array of drug names in lowercase.
-//const drugNamesLowerCase = drugs.map(drug => drug.name.toLowerCase());
-//console.log("Drug Names in Lowercase:", drugNamesLowerCase);
+const drugNamesLowerCase = drugs.map(drug => drug.name.toLowerCase());
+console.log("Drug Names in Lowercase:", drugNamesLowerCase);
+
 
 //3. Write a function that accepts a category and returns all drugs under that category.
-//const getDrugsByCategory = (category) => {
-    //return drugs.filter(drug => drug.category === category);
-//};
-//const antibiotics = getDrugsByCategory("Antibiotic");
-//console.log("Drugs in Antibiotic Category:", antibiotics);
+const getDrugsByCategory = (category) => {
+    return drugs.filter(drug => drug.category === category);
+};
+const drugsInAntibioticCategory = getDrugsByCategory("Antibiotic");
+console.log("Drugs in Antibiotic Category:", drugsInAntibioticCategory);
+
 
 //4. Log each drug’s name and its manufacturer.
-//drugs.forEach(drug => console.log(`Drug: ${drug.name}, 
-    //Manufacturer: ${drug.manufacturer}`));
+drugs.forEach(drug => console.log(`Drug: ${drug.name}, 
+    Manufacturer: ${drug.manufacturer}`));
+
 
 //5. Return all drugs that require a prescription.
-//const prescriptionDrugs = drugs.filter(drug => drug.isPrescriptionOnly);
-//console.log("Prescription Drugs:", prescriptionDrugs);
+const prescriptionDrugs = drugs.filter(drug => drug.isPrescriptionOnly);
+console.log("Prescription Drugs:", prescriptionDrugs);
+
 
 //6. Return a new array, each item should follow the format: "Drug: [name] - [dosageMg]mg".
-//const drugDosageInfo = drugs.map(drug => `Drug: ${drug.name} - ${drug.dosageMg}mg`);
-//console.log("Drug Dosage Info:", drugDosageInfo);
+const drugDosageInfo = drugs.map(drug => `Drug: ${drug.name} - ${drug.dosageMg}mg`);
+console.log("Drug Dosage Info:", drugDosageInfo);
+
 
 //7. Write a function that returns all drugs with a stock less than 50.
-//const getLowStockDrugs = () => {
-    //return drugs.filter(drug => drug.stock < 50);
-//};
-//const lowStockDrugs = getLowStockDrugs();
-//console.log("Low Stock Drugs:", lowStockDrugs);
+const getLowStockDrugs = () => {
+    return drugs.filter(drug => drug.stock < 50);
+};
+const lowStockDrugs = getLowStockDrugs();
+console.log("Low Stock Drugs:", lowStockDrugs);
+
 
 //8. Return all drugs that are not prescription-only.
 const nonPrescriptionDrugs = drugs.filter(drug => !drug.isPrescriptionOnly);
 console.log("Non-Prescription Drugs:", nonPrescriptionDrugs);
 
+
 //9.Write a function that takes a manufacturer name and returns how many drugs are from that company
-//const getDrugCountByManufacturer = (manufacturer) => {
-    //return drugs.filter(drug => drug.manufacturer === manufacturer).length;
-//};
-//const pfizerDrugCount = getDrugCountByManufacturer("Pfizer");
-//console.log("Number of Drugs from Pfizer:", pfizerDrugCount);
+const getDrugCountByManufacturer = (manufacturer) => {
+    return drugs.filter(drug => drug.manufacturer === manufacturer).length;
+};
+const pfizerDrugCount = getDrugCountByManufacturer("Pfizer");
+console.log("Number of Drugs from Pfizer:", pfizerDrugCount);
+
 
 //10. Use forEach() to count how many drugs are Analgesics.
 let analgesicCount = 0;
